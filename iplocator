@@ -1,0 +1,17 @@
+#!/bin/sh
+ 
+figlet IP LOCATOR
+
+echo "[*] 1 for ip details\n [*] 2 for geolocation \n {*} choose an option :"
+read IP
+
+if [$IP -eq 1]
+then
+     echo "Enter your target_IP :"
+     read target IP
+     curl -s https://ipinfo.io/$target_IP
+elif[$IP -eq 2]
+then
+    echo "
+
+
