@@ -8,10 +8,16 @@ read IP
 if [$IP -eq 1]
 then
      echo "Enter your target_IP :"
-     read target IP
+     read target_IP
      curl -s https://ipinfo.io/$target_IP
 elif[$IP -eq 2]
 then
-    echo "
+    echo "enter you target IP"
+    read target_IP_geo
+    curl -s https://ipvigilante.com/$target_IP_geo | jq '.data.ipv4 ,.data.latitude ,.data.longitude'
+else
+    echo "sorry wrong input"
+fi
+    
 
 
